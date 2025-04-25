@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="/css/stylesheets.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="/img/slsu-logo.webp" alt="SLSU Logo">
+        <div class="header-text">
+            <h1>Southern Luzon State University</h1>
+            <h1 class="unimap">UNIMAP</h1>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        <h2 style="font-size: 2rem;">Profile</h2>
+        <div class="prof">
+            <img src="/img/profile.png" alt="Profile Image">
+            <h3 class="u-name">Juan A. Dela Cruz</h3>
+        </div>
+        <div class="details">
+            <p class="label">Full Name:</p>
+            <p class="info">Juan A. Dela Cruz</p>
+            <p class="label">Phone Number:</p>
+            <p class="info">09xx xxx xxxx</p>
+            <p class="label">Address:</p>
+            <p class="info">Brgy. Uno, Lucena City, Quezon Province</p>
+        </div>
+        <div class="profile-btn">
+            <button type="button" style="margin-right: 5%;">Back</button>
+            <button type="button" class="btn-open-modal" onclick="editModal()">Edit</button>            
+        </div>
+        <button id="change-pass" type="button" class="btn-open-modal" onclick="changePassModal()">Change Password</button>
+    </div>
+
+    <!-- EDIT DETAILS MODAL -->
+    <div class="modal" id="editModal" tabindex="-1">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modalheader">
+                  <h3 class="modal-title">Edit Details</h3>
+                  <button type="button" class="close-btn" onclick="editCloseModal()" aria-label="Close">&times;</button>
+              </div>        
+              <div class="modalbody">
+                  <div class="upload-photo">
+                    <label id="upload-container" for="file-input">
+                      <img id="preview-image" src="/img/profile.png" alt="Click to upload" />
+                    </label>
+                    <input type="file" id="file-input" accept="image/*">
+                  </div>
+                  <div class="form">
+                    <form action="/submit" method="POST">
+                      <label for="fullname">Full Name:</label>
+                      <input type="text" id="fullname" name="fullname" value="Juan A. Dela Cruz" required>
+                      <label for="phone">Phone Number:</label>
+                      <input type="tel" id="phone" name="phone" value="09xx xxx xxxx" required>
+                      <label for="address">Address:</label>
+                      <input type="text" id="address" name="address" value="Brgy. Uno, Lucena City, Quezon Province" required>
+                    </form>
+                  </div>
+                  <div class="edit-form-btn">
+                    <button type="button" class="btn-close-modal" onclick="editCloseModal()">Cancel</button>
+                    <button type="button" class="btn-save" onclick="saveChanges()">Save</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div class="modal" id="changePassModal" tabindex="-2">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modalheader">
+                  <h3 class="modal-title">Change Password</h3>
+                  <button type="button" class="close-btn2" onclick="editCloseModal()" aria-label="Close">&times;</button>
+              </div>        
+              <div class="modalbody">
+                  <div class="form">
+                    <form action="/submit" method="POST">
+                      <label for="pass">Password:</label>
+                      <input type="password" id="pass" name="pass" value="" required>
+                      <label for="new-pass">New Password:</label>
+                      <input type="password" id="new-pass" name="new-pass" value="" required>
+                      <label for="confirm-pass">Confirm Password:</label>
+                      <input type="password" id="confirm-pass" name="confirm-pass" value="" required>
+                    </form>
+                  </div>
+                  <div class="edit-form-btn">
+                    <button type="button" class="btn-close-modal" onclick="editCloseModal()">Cancel</button>
+                    <button type="button" class="btn-save" onclick="savePassword()">Save</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+  <script>
+    // Show modal
+    function editModal() {
+      document.getElementById('editModal').style.display = 'flex';
+    }
+    function changePassModal() {
+      document.getElementById('changePassModal').style.display = 'flex';
+    }
+  
+    // Close modal
+    function editCloseModal() {
+      document.getElementById('editModal').style.display = 'none';
+    }
+    function editCloseModal() {
+      document.getElementById('changePassModal').style.display = 'none';
+    }
+    
+    // Save changes (dummy function for demonstration)
+    function saveChanges() {
+    alert("Changes have been saved!");
+    editCloseModal(); // Optional: close modal after saving
+    }
+
+    // Optional: Click outside modal to close
+    window.onclick = function (event) {
+      const modal1 = document.getElementById('editModal');
+      const modal2 = document.getElementById('changePassModal');
+
+      if (event.target === modal1) {
+        modal1.style.display = "none";
+      }
+
+      if (event.target === modal2) {
+        modal2.style.display = "none";
+      }
+    }
+
+    // Image preview
+    document.getElementById('file-input').addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById('preview-image');
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+      }
+    });
+
+    // CHANGE PASSWORD FUNCTIONALITY
+    function savePassword() {
+      const currentPass = document.getElementById('pass').value.trim();
+      const newPass = document.getElementById('new-pass').value.trim();
+      const confirmPass = document.getElementById('confirm-pass').value.trim();
+      
+      if (!currentPass || !newPass || !confirmPass) {
+        alert("Please fill in all the password fields.");
+        return;
+      }
+
+      if (newPass !== confirmPass) {
+      alert("Passwords do not match!");
+      return;
+      }
+
+      alert("Password changed successfully!");
+      editCloseModal(); // Close the modal
+      }
+
+    function editCloseModal() {
+      document.getElementById('editModal').style.display = 'none';
+      document.getElementById('changePassModal').style.display = 'none';
+    }
+
+    function changePassModal() {
+      document.getElementById('changePassModal').style.display = 'flex';
+    }
+
+    
+  </script>
+
+</body>
+</html>
