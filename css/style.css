@@ -79,6 +79,7 @@ iframe {
     border-radius: 50%;
     border: 2px solid #208C20;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    transform: translate(-18rem, 0rem);
 }
 
 .user-dropdown .dropdown-menu {
@@ -163,6 +164,7 @@ iframe {
     border-radius: 55px;
     width: 60px;
     height: 60px;
+    transform: translate(-8rem, 0rem);
 }
 
 .tool-toggle img {
@@ -318,10 +320,10 @@ ul li a i {
 
 .toggle {
     position: absolute;
-    height: 40px;
-    width: 40px;
-    top: 20px;
-    left: 15px;
+    height: 45px;
+    width: 45px;
+    top: 3rem;
+    left: 31rem;
     z-index: 1;
     cursor: pointer;
     border-radius: 2px;
