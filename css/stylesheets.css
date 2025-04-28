@@ -222,18 +222,20 @@ button {
     margin: auto;
     margin-top: 4%;
     width: 31%;
-    height: 100%;
-    max-height: 52vh;
+    /* height: 100%; */ /* REMOVE THIS */
+    max-height: 50vh;
     padding: 6vh;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: left;
+    box-sizing: border-box; /* ADD THIS */
 }
+
 .form-container h2 {
     text-align: center;
     font-weight: bold;
     margin: 0;
-    margin-bottom: 3%;
+    margin-bottom: 4%;
     font-size: 2rem !important;
 }
 form {
@@ -256,6 +258,7 @@ input[type="text"] {
     display: flex;
     gap: 20vh;
     align-self: center;
+    margin-bottom: 3%;
 }
 button {
     background-color: #208C20;
@@ -293,30 +296,59 @@ button:hover {
 
 @media (min-width: 481px) and (max-width: 767px) {
     .form-container {
-        width: 80%;
+        width: 60%;
+        height: 100%;
+        max-height: 60vh;
         padding: 5vh;
-        max-height: none;
+        padding-top: 6vh;
+        margin-top: 6%;
     }
     .form-btn {
         flex-direction: column;
-        gap: 3vh;
-    }
+        gap: 1.5vh;
+        margin-top: 3%;
+    }   
     button {
-        width: 50%;
+        width: 100%;
+    }
+    .form-container label {
+        font-size: 0.95rem;
+    }
+    .form-container h2 {
+        font-size: 1.5rem !important;
+    }
+    input[type="text"] {
+        padding: 5px;
+        max-width: 66vh
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .form-container {
         width: 60%;
+        /* height: 100%; */ /* REMOVE THIS */
+        max-height: 58vh;
         padding: 5vh;
+        padding-top: 5vh;
+        margin-top: 4%;
     }
     .form-btn {
         flex-direction: row;
-        gap: 10vh;
-    }    
+        gap: 15vh;
+    }   
+    .form-btn button {
+        width: 11vh;
+        font-size: 0.9rem;
+    }
     .form-container label {
         font-size: 0.98rem;
+    }
+    .form-container h2 {
+        font-size: 1.7rem !important;
+    }
+    input[type="text"] {
+        padding: 5px;
+        max-width: 66vh
     }
 }
 
@@ -333,6 +365,9 @@ button:hover {
     .form-btn {
         gap: 14vh;
     }
+    /* .form-btn {
+        margin-bottom: 3%;
+    } */
 }
 
 @media (min-width: 1280px) and (max-width: 1418px) {

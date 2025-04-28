@@ -71,6 +71,7 @@ iframe {
     background-color: #fff;
     border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .user-profile img {
@@ -84,7 +85,7 @@ iframe {
 .user-dropdown .dropdown-menu {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 82px;
     right: 0;
     background: #fff;
     border-radius: 10px;
@@ -163,7 +164,7 @@ iframe {
     border-radius: 55px;
     width: 60px;
     height: 60px;
-    /* transform: translate(-8rem, 0rem); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .tool-toggle img {
@@ -181,7 +182,7 @@ iframe {
 .tool-dropdown-menu {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 82px;
     right: 0;
     background: #fff;
     border-radius: 8px;
