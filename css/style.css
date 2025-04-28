@@ -63,8 +63,8 @@ iframe {
 
 .user-dropdown {
     position: absolute;
-    top: 45px;
-    right: 100px;
+    top: 2.8rem;
+    right: 24.5rem;
 }
 
 .user-profile {
@@ -79,7 +79,6 @@ iframe {
     border-radius: 50%;
     border: 2px solid #208C20;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
-    transform: translate(-18rem, 0rem);
 }
 
 .user-dropdown .dropdown-menu {
@@ -151,8 +150,8 @@ iframe {
 
 .tool-dropdown {
     position: absolute;
-    top: 45px;
-    right: 350px;
+    top: 2.8rem;
+    right: 30rem;
     z-index: 1000;
 }
 
@@ -164,7 +163,7 @@ iframe {
     border-radius: 55px;
     width: 60px;
     height: 60px;
-    transform: translate(-8rem, 0rem);
+    /* transform: translate(-8rem, 0rem); */
 }
 
 .tool-toggle img {
@@ -172,7 +171,6 @@ iframe {
     height: 40px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
-    transition: transform 0.2s ease;
 }
 
 .tool-toggle img:hover {
