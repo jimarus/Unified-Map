@@ -9,12 +9,19 @@ body {
     background-color: #208C20;
     color: white;
     border-radius: 32px;
-    margin: 2.5% auto 1%;
+    margin: 1.8% auto 1%;
     width: fit-content;
     padding-left: 2%;
     padding-right: 0.2%;
     display: flex;
     align-items: center;
+    width: 33%;
+    justify-content: center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .header-text {
     display: flex;
