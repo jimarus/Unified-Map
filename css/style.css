@@ -4,17 +4,33 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+.side-panel{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 92vh;
+    background-color: #208c20;
+    z-index: 10;
+    border: #333 solid 2px;
+}
+.map-container {
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 92vh;
+}
+.map-container .frame {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
-iframe {
+#footer {
+    position: absolute;
+    bottom: -95px;
+    left: 0;
     width: 100%;
-    height: 100%;
-    border: 0;
+    height: 170px;
+    background-color: #208c20;
 }
 
 .navbar {
@@ -599,3 +615,30 @@ ul .submenu {
     background-color: #FFA500; /* Orange */
   }
   
+
+
+  
+body {
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 999px; /* Ensure the body takes up the full viewport height */
+}
+
+/* Optional custom scroll bar styles for the body */
+body::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker color on hover */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Scrollbar track color */
+    border-radius: 10px; /* Rounded corners for the track */
+}
