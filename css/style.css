@@ -225,7 +225,6 @@ iframe {
 }
 
 
-
 .search-bar {
     position: absolute;
     top: 20px;
@@ -442,3 +441,161 @@ ul .submenu {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
+
+
+/* Wrapper and Button */
+#conditionButton {
+    position: relative;
+    margin-left: 5rem;
+    transform: translateY(-3.3rem);
+  }
+  
+  .conditions-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 11rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .conditions-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #208C20;
+    color: white;
+    padding: 6px 21px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .conditions-button:hover {
+    background-color: #186a18;
+  }
+  
+  .conditions-button i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Condition content container */
+  .conditions-content {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    padding-bottom: 10px;
+    z-index: 1;
+  }
+  
+  .conditions-content.show {
+    display: flex;
+  }
+
+  .conditions-content button {
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  .conditions-content button:hover {
+    background-color: #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Each item */
+  .condition-item {
+    position: relative;
+  }
+  
+  /* Condition individual buttons */
+  .condition-item button {
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .condition-item button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Modal per condition */
+  .condition-modal {
+    display: none;
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 180px;
+  background-color: #eee;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  }
+  
+  /* Show modal on hover */
+  .condition-item:hover .condition-modal {
+    display: block;
+  }
+  
+  /* Rotate arrow */
+  .rotate {
+    transform: rotate(180deg);
+  }
+
+  /* Colored box legend */
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .legend div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .box {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border: 1px solid #555;
+  }
+  
+  /* Colors */
+  .box.none {
+    background-color: #7CFC00; /* Lime green */
+  }
+  
+  .box.minor {
+    background-color: #FF0000; /* Red */
+  }
+  
+  .box.major {
+    background-color: #FFA500; /* Orange */
+  }
+  

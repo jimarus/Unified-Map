@@ -286,6 +286,53 @@
         referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=14.1120879,121.5614933&output=embed">
     </iframe>
 
+
+    <div class="condition-button" id="conditionButton">
+        <div class="conditions-wrapper">
+          <button class="conditions-button" id="conditionsToggle">
+            Conditions <i id="arrowIcon">▲</i>
+          </button>
+      
+          <div class="conditions-content" id="conditionsContent">
+            
+            <div class="condition-item">
+              <button>Status</button>
+              <div class="condition-modal">
+                <div class="legend">
+                  <div><span class="box none"></span> Functional</div>
+                  <div><span class="box major"></span> Ongoing Construction</div>
+                  <div><span class="box minor"></span> Not Functional</div>                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="condition-item">
+              <button>AghonImp</button>
+              <div class="condition-modal">
+                <div class="legend">
+                  <div><span class="box none"></span> Not Damaged</div>
+                  <div><span class="box minor"></span> Damaged</div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="condition-item">
+              <button>AghonRecom</button>
+              <div class="condition-modal">
+                <div class="legend">
+                  <div><span class="box none"></span> None</div>
+                  <div><span class="box major"></span> Major Repairs</div>
+                  <div><span class="box minor"></span> Minor Repairs</div>                  
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+    
+
+
     <script>
         const userDropdown = document.getElementById('userDropdown');
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -339,6 +386,17 @@
             const url = `https://www.google.com/maps?q=${coords}&output=embed`;
             campusMap.src = url;
         }
+    </script>
+
+    <script>
+        const toggleButton = document.getElementById('conditionsToggle');
+        const content = document.getElementById('conditionsContent');
+        const arrowIcon = document.getElementById('arrowIcon');
+    
+        toggleButton.addEventListener('click', () => {
+        content.classList.toggle('show');
+        arrowIcon.classList.toggle('rotate');
+        });
     </script>
 
 
