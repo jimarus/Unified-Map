@@ -182,7 +182,14 @@
     font-weight: 400;
     text-align: center;
 }
-
+.bagong-pilipinas {
+    height: 7rem;
+    width: 7rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1;
+}
 
 /* 
 .navbar {
