@@ -25,7 +25,7 @@
         <div class="header-text">
             <h1>Southern Luzon State University</h1>
             <h1 class="unimap">
-              <span>U</span><span>N</span><span>I</span><span>M</span><span>A</span><span>P</span>
+                <span>U</span><span>N</span><span>I</span><span>M</span><span>A</span><span>P</span>
             </h1>
         </div>
     </div>
@@ -339,6 +339,9 @@
             </ul>
           </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SLSU - UNIMap. All Rights Reserved.</p>
+        </div>
       </footer>
       
     
@@ -349,14 +352,20 @@
                 <h3>About</h3>
             </div>
             <div class="about-details">
-                <p>The Unified Control Mapping (UCM) System is a strategic initiative designed to enhance the University’s capacity 
-                    for data-driven planning, resource management, and disaster preparedness. Using ArcGIS technology, the 
-                    system consolidates key information on infrastructure, academic demographics, research and extension services, 
+                <p>The Unified Control Mapping (UCM) System is a strategic initiative designed to enhance the
+                    University’s capacity
+                    for data-driven planning, resource management, and disaster preparedness. Using ArcGIS technology,
+                    the
+                    system consolidates key information on infrastructure, academic demographics, research and extension
+                    services,
                     and environmental risks into one accessible platform.
-                    This initiative supports more efficient decision-making by providing up-to-date geospatial data for 
-                    both management and external stakeholders. The system includes two major components: the UNIMap Portal, 
-                    which is focused on internal planning and operations, and an interactive online map for public and client 
-                    use. Together, these tools promote transparency, adaptability, and resilience across all University functions.                
+                    This initiative supports more efficient decision-making by providing up-to-date geospatial data for
+                    both management and external stakeholders. The system includes two major components: the UNIMap
+                    Portal,
+                    which is focused on internal planning and operations, and an interactive online map for public and
+                    client
+                    use. Together, these tools promote transparency, adaptability, and resilience across all University
+                    functions.
                 </p>
                 <br>
                 <p><strong>Led by:</strong></p>
@@ -364,7 +373,7 @@
                 <p>MIS-ICT Office</p>
                 <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
 
-                                
+
             </div>
         </div>
     </div>
@@ -382,48 +391,48 @@
 
     <div class="condition-button" id="conditionButton">
         <div class="conditions-wrapper">
-          <button class="conditions-button" id="conditionsToggle">
-            Conditions <i id="arrowIcon">▲</i>
-          </button>
-      
-          <div class="conditions-content" id="conditionsContent">
-            
-            <div class="condition-item">
-              <button>Status</button>
-              <div class="condition-modal">
-                <div class="legend">
-                  <div><span class="box none"></span> Functional</div>
-                  <div><span class="box major"></span> Ongoing Construction</div>
-                  <div><span class="box minor"></span> Not Functional</div>                  
+            <button class="conditions-button" id="conditionsToggle">
+                Conditions <i id="arrowIcon">▲</i>
+            </button>
+
+            <div class="conditions-content" id="conditionsContent">
+
+                <div class="condition-item">
+                    <button>Status</button>
+                    <div class="condition-modal">
+                        <div class="legend">
+                            <div><span class="box none"></span> Functional</div>
+                            <div><span class="box major"></span> Ongoing Construction</div>
+                            <div><span class="box minor"></span> Not Functional</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-      
-            <div class="condition-item">
-              <button>AghonImp</button>
-              <div class="condition-modal">
-                <div class="legend">
-                  <div><span class="box none"></span> Not Damaged</div>
-                  <div><span class="box minor"></span> Damaged</div>
+
+                <div class="condition-item">
+                    <button>AghonImp</button>
+                    <div class="condition-modal">
+                        <div class="legend">
+                            <div><span class="box none"></span> Not Damaged</div>
+                            <div><span class="box minor"></span> Damaged</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-      
-            <div class="condition-item">
-              <button>AghonRecom</button>
-              <div class="condition-modal">
-                <div class="legend">
-                  <div><span class="box none"></span> None</div>
-                  <div><span class="box major"></span> Major Repairs</div>
-                  <div><span class="box minor"></span> Minor Repairs</div>                  
+
+                <div class="condition-item">
+                    <button>AghonRecom</button>
+                    <div class="condition-modal">
+                        <div class="legend">
+                            <div><span class="box none"></span> None</div>
+                            <div><span class="box major"></span> Major Repairs</div>
+                            <div><span class="box minor"></span> Minor Repairs</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
             </div>
-      
-          </div>
         </div>
-      </div>
-    
+    </div>
+
 
 
     <script>
@@ -485,10 +494,10 @@
         const toggleButton = document.getElementById('conditionsToggle');
         const content = document.getElementById('conditionsContent');
         const arrowIcon = document.getElementById('arrowIcon');
-    
+
         toggleButton.addEventListener('click', () => {
-        content.classList.toggle('show');
-        arrowIcon.classList.toggle('rotate');
+            content.classList.toggle('show');
+            arrowIcon.classList.toggle('rotate');
         });
     </script>
 
