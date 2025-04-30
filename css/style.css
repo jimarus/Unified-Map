@@ -4,6 +4,48 @@
     box-sizing: border-box;
 }
 
+.side-panel{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 19%;
+    height: 99.8vh;
+    background-color: #1e7b1e;
+    z-index: 10;
+    color: #f5f5f5;
+    padding: 3rem 1.5rem;
+    box-shadow: -8px 0 10px rgba(0, 0, 0, 0.2);
+    border-left: 2px solid #186a18;
+    overflow-y: auto;
+    font-family: 'Arial', sans-serif;
+}
+.about {
+    text-align: center;
+}
+.about-details {
+    margin-top: 0;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ddd;
+    text-align: justify;
+}
+.about-details p {
+    margin-bottom: 0;
+}
+.led-by {
+    margin-top: 0;
+}
+
+.map-container {
+    top: 0;
+    left: 0;
+    width: 81%;
+    height: 100vh;
+}
+.map-container .frame {
+    height: 100%;
+}
+
 .navbar {
     background-color: #208C20 !important;
     width: 40% !important;
@@ -37,7 +79,7 @@
     gap: 2vh;
 }
 
-/* .navbar h1 {
+.navbar h1 {
     color: white;
     font-weight: 400;
     margin: 0;
