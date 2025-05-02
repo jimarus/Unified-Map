@@ -174,7 +174,7 @@ body {
 .form-container {
     background-color: #f9f9f9;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 10%;
     width: 31%;
     height: 100%;
     max-height: 50vh;
@@ -562,3 +562,77 @@ input[type="file"] {
     to { opacity: 1; transform: scale(1); }
 }
   
+
+/* Login Form */
+.login-form {
+    background-color: #f9f9f9;
+    margin: auto;
+    margin-top: 12%;
+    width: 21%;
+    height: 100%;
+    max-height: 50vh;
+    padding: 6vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+.form-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+}
+.form-header img {
+    height: 5rem;
+    width: auto;
+    margin-bottom: 3%;
+}
+.form-header h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 4%;
+    font-size: 2rem !important;
+}
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+input[type="text"] {
+    padding: 8px;
+    width: 95%;
+    max-width: 41vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.create-acc {
+    display: flex;
+    gap: 1vh;
+    align-content: center;
+    align-items: center;
+}
+.login-btn {
+    display: flex;
+    gap: 18vh;
+    align-self: center;
+    margin-bottom: 3%;
+}
+.login-btn button {
+    background-color: #208C20;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 0px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 0%;
+    font-size: 1rem;
+    width: 10vh;
+}
+.login-btn button:hover {
+    background-color: #1a6b1a;
+    transition: background-color 0.3s ease;
+}

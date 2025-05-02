@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/stylesheets.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="/img/slsu-logo.webp" alt="SLSU Logo"></a>
+        <div class="header-text">
+            <h1>Southern Luzon State University</h1>
+            <h1 class="unimap">
+              <span>U</span><span>N</span><span>I</span><span>M</span><span>A</span><span>P</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="login-form">
+        <div class="form-header">
+            <img src="/img/slsu-logo.png" alt="SLSU Logo">
+            <h2>Login</h2>
+        </div>        
+        <form id="loginForm">
+          <label>Username:</label>
+          <input type="text" name="name">
+    
+          <label>Password:</label>
+          <input type="text" name="suggestions" id="suggestions">
+    
+          <div class="create-acc">
+            <p>Don's have an account?</p>
+            <a href="#">Create account.</a>
+          </div>
+
+          <div class="login-btn">
+            <button type="button" onclick="history.back()">Back</button>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    
+      <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form from submitting
+    
+          const rating = document.querySelector('input[name="rating"]:checked');
+          const issues = document.getElementById("issues").value.trim();
+          const suggestions = document.getElementById("suggestions").value.trim();
+    
+          if (!rating || issues === "" || suggestions === "") {
+            alert("Please complete all required fields before sending your feedback.");
+            return;
+          }
+    
+          alert("Thank you for your feedback!");
+          this.submit(); // Submit the form manually after validation
+        });
+    </script>
+</body>
+</html>
