@@ -1,0 +1,870 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Mapping System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="flex h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <div class="sidebar w-64 shadow-sm hidden md:block">
+            <div class="p-4 flex items-center">
+                <h1 class="text-3xl font-semibold text-white mx-auto">SLSU UNIMAP</h1>
+            </div>
+
+            <div class="px-4 py-6">
+                <ul class="space-y-1">
+                    <li>
+                        <button class="sidebar-item w-full flex items-center px-4 py-3 text-white active"
+                            onclick="showPage('dashboard')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                </path>
+                            </svg>
+                            <span class="font-medium">Main Dashboard</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-item w-full flex items-center px-4 py-3 text-white"
+                            onclick="showPage('departments')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg>
+                            <span class="font-medium">Departments</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-item w-full flex items-center px-4 py-3 text-white"
+                            onclick="showPage('campuses')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                            <span class="font-medium">Campuses</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-item w-full flex items-center px-4 py-3 text-white"
+                            onclick="showPage('buildings')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                            </svg>
+                            <span class="font-medium">Building Count</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="border-t border-gray-200 border-opacity-20 my-6"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white shadow-sm">
+                <div class="px-4 py-3 flex justify-between items-center">
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Search Bar -->
+                    <div class="hidden md:flex items-center bg-gray-100 rounded-lg px-3 py-2 w-96">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Search for buildings, departments, campuses..."
+                            class="ml-2 bg-transparent border-none focus:outline-none text-sm flex-grow">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="flex-1 overflow-y-auto p-4">
+                <!-- Main Dashboard Page -->
+                <div id="dashboard" class="page space-y-6 active">
+                    <div class="flex items-center justify-between mb-6">
+                        <h1 class="text-2xl font-bold text-gray-800">Main Dashboard</h1>
+                    </div>
+
+                    <!-- Stat Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Hazard Mapping Coverage -->
+                        <div class="bg-white rounded-xl shadow-sm p-6 card stat-card">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Hazard Mapping Coverage</p>
+                                    <div class="flex items-end mt-1">
+                                        <h3 class="text-3xl font-bold text-gray-800">75%</h3>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Projects -->
+                        <div class="bg-white rounded-xl shadow-sm p-6 card stat-card"
+                            style="border-left-color: #8b5cf6;">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Research Projects</p>
+                                    <div class="flex items-end mt-1">
+                                        <h3 class="text-3xl font-bold text-gray-800">42</h3>
+                                        <span class="text-xs text-green-600 ml-2 mb-1">+3 this month</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Across 8 departments</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Land Area -->
+                        <div class="bg-white rounded-xl shadow-sm p-6 card stat-card"
+                            style="border-left-color: #10b981;">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Total Land Area</p>
+                                    <div class="flex items-end mt-1">
+                                        <h3 class="text-3xl font-bold text-gray-800">145.3</h3>
+                                        <span class="text-sm text-gray-600 ml-1 mb-1">hectares</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">9 campuses quezon province</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Access Buttons -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Quick Access</h2>
+                        <div class="flex flex-wrap gap-3">
+                            <button
+                                class="quick-btn flex items-center bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                Add Project
+                            </button>
+                            <button
+                                class="quick-btn flex items-center bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                    </path>
+                                </svg>
+                                Update Map
+                            </button>
+                            <button
+                                class="quick-btn flex items-center bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                View Reports
+                            </button>
+                            <button
+                                class="quick-btn flex items-center bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                Schedule Event
+                            </button>
+                            <button
+                                class="quick-btn flex items-center bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Upload Photos
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Map and Recent Updates -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Map Preview -->
+                        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6 card">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-800">Campus Map</h2>
+                                <button
+                                    class="text-green-600 hover:text-green-700 text-sm font-medium flex items-center">
+                                    View Full Map
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.3984347039336!2d121.55858867509691!3d14.112650486317932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd538ac62e0daf%3A0x8f0c8e2dcd66050d!2sSouthern%20Luzon%20State%20University!5e0!3m2!1sen!2sph!4v1746170998002!5m2!1sen!2sph"
+                                width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <!-- Recent Updates -->
+                        <div class="bg-white rounded-xl shadow-sm p-6 card">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-800">Recent Updates</h2>
+                                <button class="text-green-600 hover:text-green-700 text-sm font-medium">View
+                                    All</button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-green-500 pl-4 py-1">
+                                    <p class="text-sm font-medium text-gray-800">New Science Building Opening</p>
+                                    <p class="text-xs text-gray-500 mt-1">The new Science Building will open next Monday
+                                        with state-of-the-art laboratories.</p>
+                                    <p class="text-xs text-gray-400 mt-2">Today, 9:30 AM</p>
+                                </div>
+
+                                <div class="border-l-4 border-yellow-500 pl-4 py-1">
+                                    <p class="text-sm font-medium text-gray-800">Library Renovation Notice</p>
+                                    <p class="text-xs text-gray-500 mt-1">The west wing of the library will be closed
+                                        for renovations starting next week.</p>
+                                    <p class="text-xs text-gray-400 mt-2">Yesterday, 2:15 PM</p>
+                                </div>
+
+                                <div class="border-l-4 border-blue-500 pl-4 py-1">
+                                    <p class="text-sm font-medium text-gray-800">New Campus Map Updates</p>
+                                    <p class="text-xs text-gray-500 mt-1">The latest version of the campus map now
+                                        includes accessibility routes and emergency exits.</p>
+                                    <p class="text-xs text-gray-400 mt-2">Oct 15, 11:45 AM</p>
+                                </div>
+
+                                <div class="border-l-4 border-purple-500 pl-4 py-1">
+                                    <p class="text-sm font-medium text-gray-800">Research Grant Approved</p>
+                                    <p class="text-xs text-gray-500 mt-1">The university received a $2.5M grant for
+                                        environmental research projects.</p>
+                                    <p class="text-xs text-gray-400 mt-2">Oct 12, 4:20 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yearly Student Population Line Chart -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Yearly Student Population</h2>
+                        <div class="h-80">
+                            <canvas id="yearlyPopulationChart"
+                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
+                                width="1569" height="320"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Departments Page -->
+                <div id="departments" class="page space-y-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h1 class="text-2xl font-bold text-gray-800">Departments</h1>
+                    </div>
+
+                    <!-- Department Chart -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Population of Students per Department (Main
+                            Campus)</h2>
+                        <div class="h-80">
+                            <canvas id="departmentChart"
+                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
+                                height="320" width="1569"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Department Data Table -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Department Population Data</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Department</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Student Population</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Faculty Count</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Building Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CABHA
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">45</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">North Campus</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CIT
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">500</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">22</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">East Campus</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CEN
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">38</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">South Campus</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CAM
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">300</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">15</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">West Campus</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">GAG
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">200</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">12</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">North Campus</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CAS
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">50</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Central Campus
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">CTE
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">42</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">East Campus</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campuses Page -->
+                <div id="campuses" class="page space-y-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h1 class="text-2xl font-bold text-gray-800">Campuses</h1>
+                    </div>
+
+                    <!-- Campus Chart -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Student Population per Campus</h2>
+                        <div class="h-80">
+                            <canvas id="campusChart"
+                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
+                                height="320" width="1569"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Campus Data Table -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Campus Population Data</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Campus</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Student Population</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Land Area (hectares)</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Building Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="table-row bg-green-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-800">
+                                            Lucban</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-800">5,000
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">45.2</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">55</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Catanauan</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">3,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">22.5</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">28</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Alabat
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">3,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">18.7</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">25</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Gumaca
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">15.3</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">18</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Infanta</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">12.8</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">15</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Tiaong
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">10.5</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">12</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Lucena
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">8.2</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">10</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Polillo</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">7.5</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">8</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Tagkawayan</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">4.6</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Building Count Page -->
+                <div id="buildings" class="page space-y-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h1 class="text-2xl font-bold text-gray-800">Building Count</h1>
+                    </div>
+
+                    <!-- Building Chart -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Building Count in Main Campus</h2>
+                        <div class="h-80">
+                            <canvas id="buildingChart"
+                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
+                                height="320" width="1569"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Building Data Table -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Building Count Summary</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Building Type</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Count</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Percentage</th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Total Area (sq.m)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Academic</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">35</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">64%</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">42,500</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Laboratories</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">10</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">18%</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">15,200</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Admin/Services</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">7</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">13%</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">8,750</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            Dormitories</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">3</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">5%</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">12,300</td>
+                                    </tr>
+                                    <tr class="table-row bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Total
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">55
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">100%
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">78,750
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Function to switch between pages
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Find the clicked button and add active class
+            event.currentTarget.classList.add('active');
+        }
+
+        // Yearly Student Population Line Chart
+        const yearlyPopulationCtx = document.getElementById('yearlyPopulationChart').getContext('2d');
+        const yearlyPopulationChart = new Chart(yearlyPopulationCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Student Population',
+                    data: [10500, 11200, 12000, 12800, 13500, 14200],
+                    backgroundColor: 'rgba(22, 163, 74, 0.2)',
+                    borderColor: '#16a34a',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#16a34a',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            callback: function (value) {
+                                return value.toLocaleString();
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        titleColor: '#16a34a',
+                        titleFont: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        bodyColor: '#333',
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 12,
+                        borderColor: '#16a34a',
+                        borderWidth: 1,
+                        displayColors: false,
+                        callbacks: {
+                            title: function (context) {
+                                return 'Year: ' + context[0].label;
+                            },
+                            label: function (context) {
+                                return 'Population: ' + context.raw.toLocaleString() + ' students';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Department Population Chart
+        const departmentCtx = document.getElementById('departmentChart').getContext('2d');
+        const departmentChart = new Chart(departmentCtx, {
+            type: 'bar',
+            data: {
+                labels: ['CABHA', 'CIT', 'CEN', 'CAM', 'GAG', 'CAS', 'CTE'],
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [1000, 500, 1000, 300, 200, 1000, 1000],
+                    backgroundColor: [
+                        '#16a34a', // green
+                        '#3b82f6', // blue
+                        '#ef4444', // red
+                        '#f59e0b', // amber
+                        '#8b5cf6', // purple
+                        '#ec4899', // pink
+                        '#06b6d4'  // cyan
+                    ],
+                    borderColor: [
+                        '#15803d', // darker green
+                        '#2563eb', // darker blue
+                        '#dc2626', // darker red
+                        '#d97706', // darker amber
+                        '#7c3aed', // darker purple
+                        '#db2777', // darker pink
+                        '#0891b2'  // darker cyan
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Campus Population Chart - Sorted with highest highlighted
+        const campusData = [
+            { campus: 'Lucban', population: 5000 },
+            { campus: 'Lucena', population: 1000 },
+            { campus: 'Gumaca', population: 2000 },
+            { campus: 'Alabat', population: 3000 },
+            { campus: 'Catanauan', population: 3000 },
+            { campus: 'Polillo', population: 1000 },
+            { campus: 'Infanta', population: 2000 },
+            { campus: 'Tagkawayan', population: 1000 },
+            { campus: 'Tiaong', population: 2000 }
+        ];
+
+        // Sort data by population (descending)
+        campusData.sort((a, b) => b.population - a.population);
+
+        const campusLabels = campusData.map(item => item.campus);
+        const campusPopulations = campusData.map(item => item.population);
+
+        // Create background colors array with highest value highlighted
+        const maxPopulation = Math.max(...campusPopulations);
+        const campusBackgroundColors = campusPopulations.map(pop =>
+            pop === maxPopulation ? '#16a34a' : '#64748b'
+        );
+
+        const campusCtx = document.getElementById('campusChart').getContext('2d');
+        const campusChart = new Chart(campusCtx, {
+            type: 'bar',
+            data: {
+                labels: campusLabels,
+                datasets: [{
+                    label: 'Student Population',
+                    data: campusPopulations,
+                    backgroundColor: campusBackgroundColors,
+                    borderColor: campusBackgroundColors.map(color =>
+                        color === '#16a34a' ? '#15803d' : '#475569'
+                    ),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `Population: ${context.raw.toLocaleString()}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Building Count Chart
+        const buildingCtx = document.getElementById('buildingChart').getContext('2d');
+        const buildingChart = new Chart(buildingCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Academic', 'Dormitories', 'Laboratories', 'Admin/Services'],
+                datasets: [{
+                    data: [35, 3, 10, 7],
+                    backgroundColor: [
+                        '#16a34a', // green
+                        '#3b82f6', // blue
+                        '#f59e0b', // amber
+                        '#8b5cf6'  // purple
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            boxWidth: 15,
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = Math.round((value / total) * 100);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9395c63b611287e7',t:'MTc0NjE3MDYxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+</body>
+
+</html>
