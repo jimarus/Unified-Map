@@ -88,6 +88,14 @@ body {
     background-color: rgba(22, 163, 74, 0.05);
 }
 
+.back-btn {
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-3px);
+}
+
 *,
 ::before,
 ::after {
@@ -962,6 +970,7 @@ video {
     --tw-text-opacity: 1;
     color: rgb(21 128 61 / var(--tw-text-opacity, 1))
 }
+
 
 .text-green-800 {
     --tw-text-opacity: 1;
