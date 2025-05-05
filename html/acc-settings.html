@@ -33,7 +33,7 @@
             <p class="info">Brgy. Uno, Lucena City, Quezon Province</p>
         </div>
         <div class="profile-btn">
-            <button type="button" style="margin-right: 5%;">Back</button>
+            <button type="button" style="margin-right: 5%;" onclick="goBack()">Back</button>
             <button type="button" class="btn-open-modal" onclick="editModal()">Edit</button>            
         </div>
         <button id="change-pass" type="button" class="btn-open-modal" onclick="changePassModal()">Change Password</button>
@@ -104,6 +104,10 @@
 
 
   <script>
+    function goBack() {
+        window.history.back(); // Navigates to the previous page
+    }
+
     // Show modal
     function editModal() {
       document.getElementById('editModal').style.display = 'flex';

@@ -47,6 +47,7 @@ body {
     margin: 0 !important;
 }
 
+
 /* MEDIA QUERIES */
 @media (max-width: 480px) {
     .header {
@@ -195,7 +196,7 @@ form {
     flex-direction: column;
     gap: 1.5vh;
 }
-input[type="text"] {
+#feedbackForm input[type="text"] {
     padding: 8px;
     width: 100%;
     max-width: 60vh;
@@ -370,7 +371,7 @@ button:hover {
 .profile-container {
     background-color: #f9f9f9;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 9%;
     width: 31%;
     height: 100%;
     max-height: 59vh;
@@ -419,7 +420,7 @@ button:hover {
     background-color: #1a6b1a;
 }
 #change-pass {
-    transform: translateX(233px);
+    /* transform: translateX(233px); */
     background-color: #208C20;
     color: white;
     border: none;
@@ -429,7 +430,7 @@ button:hover {
     cursor: pointer;
     align-self: center;
     margin-top: 7%;
-    margin-right: 10%;
+    /* margin-right: 10%; */
     font-size: 1rem;
     width: 22vh;
 }
