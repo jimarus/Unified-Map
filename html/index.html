@@ -293,16 +293,19 @@
           <div class="footer-branding">            
             <div class="logos">
               <img src="/img/slsu-logo.webp" alt="SLSU Logo">
-              <img src="/img/pdo-logo.webp" alt="PDO Logo">
-              <img src="/img/mis-logo.webp" alt="MIS-ICT Logo">
               <img src="/img/slsu-cherm-logo.webp" alt="CHERM Logo">
+              <img src="/img/pdo-logo.webp" alt="PDO Logo">
+              <img src="/img/mis-logo.webp" alt="MIS-ICT Logo">              
             </div>
             <h3 style="font-weight: bold;">Organizations</h3>
-            <div class="org-info">              
-              <p>Southern Luzon State University</p>
-              <p>Planning and Development Office</p>
-              <p>MIS-ICT Office</p>
-              <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
+            <div class="org-info">   
+                <a href="">
+                    <p>Southern Luzon State University</p>
+                </a>
+
+                    <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
+                    <p>Planning and Development Office</p>
+                    <p>MIS-ICT Office</p>              
             </div>
           </div>
       
@@ -315,7 +318,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://mail.google.com/mail/u/0/">
                   <i class="fas fa-envelope"></i> Gmail
                 </a>
               </li>
@@ -325,9 +328,11 @@
                 </a>
               </li>
               <li>
-                <i class="fas fa-map-marker-alt"></i> Quezon Avenue, Lucban, Philippines
+                <a href="https://www.google.com/maps/place/Southern+Luzon+State+University/@14.1126557,121.5585887,1103m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33bd538ac62e0daf:0x8f0c8e2dcd66050d!8m2!3d14.1126505!4d121.5611636!16s%2Fm%2F02qfcg6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoASAFQAw%3D%3D">
+                    <i class="fas fa-map-marker-alt"></i> Quezon Avenue, Lucban, Philippines
+                </a>
               </li>
-              <li>
+              <li class="copyable" onclick="copyToClipboard('(042) 540 6635')">
                 <i class="fas fa-phone-alt"></i> (042) 540 6635
               </li>
             </ul>
@@ -363,9 +368,9 @@
                 </p>
                 <br>
                 <p><strong>Led by:</strong></p>
-                <p>Planning and Development Office</p>
-                <p>MIS-ICT Office</p>
                 <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
+                <p>Planning and Development Office</p>
+                <p>MIS-ICT Office</p>                
             </div>
         </div>
     </div>
@@ -425,6 +430,13 @@
         </div>
     </div>
     <script src="/js/main.js"></script>
+    <script>
+        function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Phone number copied: " + text);
+        });
+        }
+    </script>
 
 
 </body>

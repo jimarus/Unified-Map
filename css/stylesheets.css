@@ -636,3 +636,9 @@ input[type="text"] {
     background-color: #1a6b1a;
     transition: background-color 0.3s ease;
 }
+
+/* Phone Number Copyable */
+li.copyable {
+    cursor: pointer;
+    user-select: none;
+}
