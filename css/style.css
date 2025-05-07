@@ -56,7 +56,6 @@
     display: grid;
     position: absolute;
     bottom: 0;
-    top: 59.5rem;
     left: 0;
     width: 100%;
     height: 34vh;
@@ -68,6 +67,8 @@
     border-top: 1.5px solid #4d4d4d;
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
+    position: absolute;
+    top: 100%;
 }
 #footer::before {
     content: '';
@@ -76,16 +77,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #135c13af; /* Semi-transparent white layer */
-    z-index: 1; /* Place it above the background image but below the content */
-    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+    background-color: #135c13af; 
+    pointer-events: none; 
 }
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
-    position: relative; /* Ensure the content is above the pseudo-element */
+    position: relative; 
     z-index: 2
   }
   
