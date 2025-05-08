@@ -1,14 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard </title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet">
+    <title>Dashboard</title>
     <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/src/input.css">
-    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -17,19 +16,18 @@
         <!-- Sidebar -->
         <div class="sidebar w-64 shadow-sm hidden md:block">
             <div class="p-4 flex items-center">
-                <h1 class="text-3xl font-semibold text-white mx-auto">SLSU UNIMAP</h1>
+                <h1 class="text-xl font-semibold text-white">SLSU UniMap</h1>
             </div>
 
             <div class="px-4 py-6">
                 <ul class="space-y-1">
                     <li>
-                        <button class="sidebar-item w-full flex items-center px-4 py-3 text-white active"
+                        <button class="sidebar-item active w-full flex items-center px-4 py-3 text-white"
                             onclick="showPage('dashboard')">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                </path>
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
                             <span class="font-medium">Main Dashboard</span>
                         </button>
@@ -40,8 +38,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                </path>
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                             <span class="font-medium">Departments</span>
                         </button>
@@ -52,8 +49,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                </path>
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="font-medium">Campuses</span>
                         </button>
@@ -64,7 +60,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
                             </svg>
                             <span class="font-medium">Building Count</span>
                         </button>
@@ -72,6 +68,45 @@
                 </ul>
 
                 <div class="border-t border-gray-200 border-opacity-20 my-6"></div>
+
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="font-medium">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="font-medium">Help</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="mt-12 px-4 py-6 bg-white bg-opacity-10 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="ml-2 text-sm font-medium text-white">Need Help?</h3>
+                    </div>
+                    <p class="text-xs text-gray-200 mb-3">Contact our support team for assistance with the mapping
+                        system.</p>
+                    <a href="#" class="text-xs font-medium text-white hover:text-gray-200">Contact Support</a>
+                </div>
             </div>
         </div>
 
@@ -85,7 +120,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
 
@@ -94,29 +129,68 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                         <input type="text" placeholder="Search for buildings, departments, campuses..."
                             class="ml-2 bg-transparent border-none focus:outline-none text-sm flex-grow">
+                    </div>
+
+                    <!-- Right Side Items -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Notification Icon -->
+                        <div class="relative">
+                            <button class="p-1 rounded-full hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                </svg>
+                                <span class="notification-badge">3</span>
+                            </button>
+                        </div>
+
+                        <!-- User Info -->
+                        <div class="flex items-center">
+                            <div class="hidden md:flex flex-col mr-3 text-right">
+                                <span class="text-sm font-medium text-gray-800">Alex Johnson</span>
+                                <span class="text-xs text-gray-500">Administrator</span>
+                            </div>
+                            <div
+                                class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-medium">
+                                AJ
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
 
             <!-- Content Area -->
             <main class="flex-1 overflow-y-auto p-4">
+                <!-- Back Button - Added to all pages -->
                 <button onclick="goToMainPage()"
                     class="back-btn mb-4 flex items-center text-green-700 hover:text-green-800 font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                     Back to Main Page
                 </button>
+
                 <!-- Main Dashboard Page -->
-                <div id="dashboard" class="page space-y-6 active">
+                <div id="dashboard" class="page active space-y-6">
                     <div class="flex items-center justify-between mb-6">
                         <h1 class="text-2xl font-bold text-gray-800">Main Dashboard</h1>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Last updated: Today, 10:45 AM</span>
+                            <button class="ml-2 text-green-600 hover:text-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Stat Cards -->
@@ -128,8 +202,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-                                        </path>
+                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -152,8 +225,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-                                        </path>
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -175,8 +247,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                        </path>
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -185,7 +256,7 @@
                                         <h3 class="text-3xl font-bold text-gray-800">145.3</h3>
                                         <span class="text-sm text-gray-600 ml-1 mb-1">hectares</span>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-1">9 campuses quezon province</p>
+                                    <p class="text-xs text-gray-500 mt-1">9 campuses nationwide</p>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +271,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                                 </svg>
                                 Add Project
                             </button>
@@ -209,8 +280,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
-                                    </path>
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                                 </svg>
                                 Update Map
                             </button>
@@ -219,8 +289,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                    </path>
+                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 View Reports
                             </button>
@@ -229,8 +298,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                    </path>
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                                 Schedule Event
                             </button>
@@ -239,10 +307,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
-                                    </path>
+                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                                 Upload Photos
                             </button>
@@ -261,14 +328,29 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
+                                            d="M9 5l7 7-7 7" />
                                     </svg>
                                 </button>
                             </div>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.3984347039336!2d121.55858867509691!3d14.112650486317932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd538ac62e0daf%3A0x8f0c8e2dcd66050d!2sSouthern%20Luzon%20State%20University!5e0!3m2!1sen!2sph!4v1746170998002!5m2!1sen!2sph"
-                                width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="map-container h-80 w-full rounded-lg"></div>
+                            <div class="flex justify-between mt-4">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-600 rounded-full"></div>
+                                    <span class="text-xs text-gray-500 ml-1">High Traffic</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                    <span class="text-xs text-gray-500 ml-1">Medium Traffic</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                    <span class="text-xs text-gray-500 ml-1">Construction</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <span class="text-xs text-gray-500 ml-1">Closed Area</span>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Recent Updates -->
@@ -314,9 +396,7 @@
                     <div class="bg-white rounded-xl shadow-sm p-6 card">
                         <h2 class="text-lg font-semibold text-gray-800 mb-4">Yearly Student Population</h2>
                         <div class="h-80">
-                            <canvas id="yearlyPopulationChart"
-                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
-                                width="1569" height="320"></canvas>
+                            <canvas id="yearlyPopulationChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -325,6 +405,16 @@
                 <div id="departments" class="page space-y-6">
                     <div class="flex items-center justify-between mb-6">
                         <h1 class="text-2xl font-bold text-gray-800">Departments</h1>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Last updated: Today, 10:45 AM</span>
+                            <button class="ml-2 text-green-600 hover:text-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Department Chart -->
@@ -332,9 +422,7 @@
                         <h2 class="text-lg font-semibold text-gray-800 mb-4">Population of Students per Department (Main
                             Campus)</h2>
                         <div class="h-80">
-                            <canvas id="departmentChart"
-                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
-                                height="320" width="1569"></canvas>
+                            <canvas id="departmentChart"></canvas>
                         </div>
                     </div>
 
@@ -420,15 +508,23 @@
                 <div id="campuses" class="page space-y-6">
                     <div class="flex items-center justify-between mb-6">
                         <h1 class="text-2xl font-bold text-gray-800">Campuses</h1>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Last updated: Today, 10:45 AM</span>
+                            <button class="ml-2 text-green-600 hover:text-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Campus Chart -->
                     <div class="bg-white rounded-xl shadow-sm p-6 card">
                         <h2 class="text-lg font-semibold text-gray-800 mb-4">Student Population per Campus</h2>
                         <div class="h-80">
-                            <canvas id="campusChart"
-                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
-                                height="320" width="1569"></canvas>
+                            <canvas id="campusChart"></canvas>
                         </div>
                     </div>
 
@@ -528,15 +624,23 @@
                 <div id="buildings" class="page space-y-6">
                     <div class="flex items-center justify-between mb-6">
                         <h1 class="text-2xl font-bold text-gray-800">Building Count</h1>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Last updated: Today, 10:45 AM</span>
+                            <button class="ml-2 text-green-600 hover:text-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Building Chart -->
                     <div class="bg-white rounded-xl shadow-sm p-6 card">
                         <h2 class="text-lg font-semibold text-gray-800 mb-4">Building Count in Main Campus</h2>
                         <div class="h-80">
-                            <canvas id="buildingChart"
-                                style="display: block; box-sizing: border-box; height: 320px; width: 1569px;"
-                                height="320" width="1569"></canvas>
+                            <canvas id="buildingChart"></canvas>
                         </div>
                     </div>
 
@@ -609,9 +713,7 @@
         </div>
     </div>
 
-    <script src="js/dashboard.js"></script>
-    <iframe height="1" width="1"
-        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <script src="/js/dashboard.js"></script>
 </body>
 
 </html>
