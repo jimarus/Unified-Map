@@ -11,22 +11,29 @@ body {
     border-radius: 32px;
     margin: 1.8% auto 1%;
     width: fit-content;
-    padding-left: 2%;
     padding-right: 0.2%;
     display: flex;
     align-items: center;
-    width: 33%;
+    width: 100%;
+    max-width: 64vh;
     justify-content: center;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .header-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 1vh;
+    height: 100%;
 }
 .header h1 {
     letter-spacing: 2px;
@@ -50,123 +57,135 @@ body {
 /* MEDIA QUERIES */
 @media (max-width: 480px) {
     .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 4%;
-        padding-right: 4%;
-        margin-top: 4%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        width: 69%;
+        max-width: 28vh;
+        height: 8%;
+        overflow: hidden;
+        left: 73%;
+        top: 2%;
     }
-    .header-text {
-        align-items: center;
-        padding-top: 0 !important;
-    }
-    .header h1 {
-        font-size: 0.8rem;
+    .header-text h1 {
+        font-size: 0.9rem;
     }
     .header .unimap {
-        gap: 58%;
-        transform: translateX(-145%);
+        gap: 19%;
+        transform: translateX(-36px);
     }
     .header img {
-        height: 6.5vh;
+        height: 5vh;
+    }
+    .header-text {
+        width: 19vh;
     }
 }
 
+
+
 @media (min-width: 481px) and (max-width: 767px) {
     .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 0.5%;
-        padding-bottom: 0;
-        padding-left: 5%;
-        padding-right: 5%;
-        margin-top: 5%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        width: 69%;
+        max-width: 30vh;
+        height: 9%;
+        overflow: hidden;
+        left: 73%;
+        top: 2%;
     }
-    .header-text {
-        align-items: center;
-        padding-top: 0 !important;
-    }
-    .header h1 {
+    .header-text h1 {
         font-size: 1rem;
     }
     .header .unimap {
-        gap: 58%;
-        transform: translateX(-145%);
+        gap: 19%;
+        transform: translateX(-36px);
     }
     .header img {
-        height: 7vh;
+        height: 5vh;
+    }
+    .header-text {
+        width: 21vh;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .header {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        margin-top: 4%;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+        width: 69%;
+        max-width: 40vh;
+        height: 10%;
+        overflow: hidden;
     }
-    .header-text {
-        align-items: flex-start;
-    }
-    .header {
-        padding-right: 2%;
-    }
-    .header-text {
-        padding: 0.4vh;
-    }
-    .header h1 {
-        font-size: 1.4rem;
+    .header-text h1 {
+        font-size: 1.2rem;
     }
     .header .unimap {
-        gap: 58%;
-        transform: translateX(-145%);
+        gap: 20%;
+        transform: translateX(-50px);
     }
     .header img {
         height: 7vh;
+        margin-right: 0;
+    }
+    .header-text {
+        width: 25vh;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1279px) and (min-height: 680px) {
     .header {
-        padding-right: 2%;
-        margin-top: 3%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: 69%;
+        max-width: 65vh;
+        height: 8.5%;
+        overflow: hidden;
     }
-    .header-text {
-        padding: 0.5vh;
-    }
-    .header h1 {
-        font-size: 1.5rem;
+    .header-text h1 {
+        font-size: 1.4rem;
     }
     .header .unimap {
-        gap: 58%;
-        transform: translateX(-145%);
+        gap: 57%;
+        transform: translateX(-143px);
     }
     .header img {
-        height: 8vh;
+        height: 6vh;
     }
 }
 
 @media (min-width: 1280px) and (max-width: 1418px) {
     .header {
-        padding-right: 2%;
-        margin-top: 3%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: 69%;
+        max-width: 70vh;
     }
-    .header .unimap {
-        gap: 58%;
-        transform: translateX(-145%);
-    }
-    .header img {
-        height: 9vh;
+    
+}
+
+@media (min-width: 1419px) and (max-width: 1650px) {
+    .header {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: 69%;
+        max-width: 70vh;
     }
 }
 
-@media (min-width: 1419px) {
+@media (min-width: 1651px) {
     .header {
-        padding-right: 2%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: 69%;
+        max-width: 70vh;
     }
 }
 
