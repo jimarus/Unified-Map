@@ -63,23 +63,22 @@ body {
         padding-left: 0.5rem;
         width: 69%;
         max-width: 28vh;
-        height: 8%;
+        height: 7%;
         overflow: hidden;
-        left: 73%;
-        top: 2%;
+        top: 5%;
     }
     .header-text h1 {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     .header .unimap {
-        gap: 19%;
+        gap: 18%;
         transform: translateX(-36px);
     }
     .header img {
         height: 5vh;
     }
     .header-text {
-        width: 19vh;
+        width: 18vh;
     }
 }
 
