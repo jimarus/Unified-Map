@@ -44,7 +44,8 @@
                 <li><a href="html/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="#"><i class="fas fa-school"></i> Colleges</a></li>
                 <li><a href="html/feedback-form.html"><i class="fas fa-comment-alt"></i> Feedback</a></li>
-                <li><a href="#"><i class="fas fa-print"></i> Print Map</a></li>
+                <li><a href="javascript:window.print()" onclick="printMap(event)"><i class="fas fa-print"></i> Print Map</a></li>
+                <li><a href="#" onclick="shareMap()"><i class="fas fa-share-alt"></i> Share Map</a></li>
             </ul>
         </div>
     </div>
@@ -431,12 +432,24 @@
     </div>
     <script src="js/main.js"></script>
     <script>
+        // Function to share the map
+        function shareMap() {
+            const shareURL = "https://www.google.com/maps?q=14.1120879,121.5614933";
+            navigator.clipboard.writeText(shareURL).then(() => {
+                alert("Map shareable link copied to clipboard: " + shareURL);
+            });
+        }
+
+        // COPYABLE PHONE NUMBER AT FOOTER
         function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
             alert("Phone number copied: " + text);
         });
         }
     </script>
+        
+      
+    
 
 
 </body>
