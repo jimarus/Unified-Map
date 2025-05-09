@@ -71,8 +71,8 @@ body {
         font-size: 0.8rem;
     }
     .header .unimap {
-        gap: 18%;
-        transform: translateX(-36px);
+        gap: 15%;
+        transform: translateX(-25px);
     }
     .header img {
         height: 5vh;
