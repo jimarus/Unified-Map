@@ -781,6 +781,104 @@
 }
 
 
+
+
+
+
+/* Responsive adjustments for tablets (426px to 768px) */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .side-panel {
+        display: none !important;
+        /* Hide side panel */
+        overflow: hidden;
+    }
+
+    .map-container {
+        width: 100%;
+        /* Full width for map */
+    }
+
+    #footer {
+        padding: 1rem;
+        /* Adjust footer padding */
+        font-size: 0.9rem;
+        /* Smaller font size */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        /* Stack footer content */
+        gap: 1rem;
+    }
+
+    .footer-branding,
+    .contact-info {
+        max-width: 100%;
+        /* Full width for footer sections */
+    }
+}
+
+/* Responsive adjustments for desktops (769px to 1021px) */
+@media only screen and (min-width: 769px) and (max-width: 1021px) {
+    .side-panel {
+        width: 25%;
+        /* Adjust side panel width */
+    }
+
+    .map-container {
+        width: 75%;
+        /* Adjust map container width */
+    }
+
+    #footer {
+        padding: 2rem;
+        /* Adjust footer padding */
+    }
+
+    .footer-content {
+        gap: 2rem;
+        /* Adjust spacing between footer sections */
+    }
+}
+
+/* Responsive adjustments for small screens (up to 425px) */
+@media only screen and (max-width: 425px) {
+    .side-panel {
+        display: none !important;
+        /* Hide side panel */
+    }
+
+    .map-container {
+        width: 100%;
+        /* Full width for map */
+    }
+
+    #footer {
+        padding: 1rem;
+        /* Adjust footer padding */
+        font-size: 0.8rem;
+        /* Smaller font size */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        /* Stack footer content */
+        gap: 1rem;
+    }
+
+    .footer-branding,
+    .contact-info {
+        max-width: 100%;
+        /* Full width for footer sections */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        /* Smaller font size for footer bottom */
+    }
+}
+
+
 /* Show menu */
 .tool-dropdown-menu.show {
     display: block;
@@ -1192,3 +1290,6 @@ body::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
+
+
