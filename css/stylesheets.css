@@ -30,12 +30,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1vh;
+  padding: 0vh;
 }
 
 /* Title Styling */
 .header h1 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 0;
   letter-spacing: 2px;
 }
@@ -43,7 +43,7 @@ body {
 /* UNIMAP Word */
 .header .unimap {
   display: flex;
-  gap: 4vh;
+  gap: 6vh;
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@ body {
 }
 
 /* Large devices (laptops and desktops) */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1350px) {
   .header {
     max-width: 60vh;
     top: 2%;
@@ -138,13 +138,13 @@ body {
     font-size: 1.3rem;
   }
 
-  .header .unimap {
-    gap: 3.5vh;
-  }
-
   .header img {
     height: 6.5vh;
   }
+
+  .header .unimap {
+  gap: 7vh;
+}
 }
 
 
