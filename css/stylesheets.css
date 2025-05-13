@@ -128,7 +128,7 @@ body {
         right: 60%;
     }
     .header-text h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .header .unimap {
         gap: 20%;
@@ -151,13 +151,16 @@ body {
         max-width: 65vh;
         height: 8.5%;
         overflow: hidden;
+        left: 45%;
+        right: 55%;
     }
     .header-text h1 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .header .unimap {
         gap: 57%;
-        transform: translateX(-143px);
+        left: 50%;
+        right: 50%;
     }
     .header img {
         height: 6vh;
