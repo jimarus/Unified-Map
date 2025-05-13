@@ -442,7 +442,7 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
     align-self: center;
-    margin-top: 7%;
+    margin-top: 5%;
     /* margin-right: 10%; */
     font-size: 1rem;
     width: 22vh;
@@ -586,10 +586,9 @@ button:hover {
 
 @media (min-width: 1419px) {
     .profile-container {
-        width: 33%;
+        width: 31%;
         height: 100%;
-        max-height: 58vh;
-        overflow: auto;
+        max-height: 59vh;
     }
 }
 
