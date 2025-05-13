@@ -214,11 +214,11 @@ button:hover {
     .form-container {
         width: 65%;
         height: 100%;
-        max-height: 61vh;
+        max-height: 58vh;
         padding: 4vh;
         padding-bottom: 8vh;
         padding-top: 4vh;
-        margin-top: 8%;
+        transform: translateY(90px);
     }
     .form-btn {
         flex-direction: row;
@@ -245,11 +245,11 @@ button:hover {
     .form-container {
         width: 65%;
         height: 100%;
-        max-height: 61vh;
+        max-height: 58vh;
         padding: 4vh;
         padding-bottom: 8vh;
         padding-top: 4vh;
-        margin-top: 8%;
+        transform: translateY(90px);
     }
     .form-btn {
         flex-direction: row;
@@ -280,7 +280,7 @@ button:hover {
         padding: 8vh;
         padding-bottom: 3vh;
         padding-top: 3vh;
-        margin-top: 8%;
+        transform: translateY(75px);
     }
     .form-btn {
         flex-direction: row;
@@ -308,7 +308,7 @@ button:hover {
         width: 55%;
         height: 100%;
         max-height: 58vh;
-        margin-top: 5%;
+        transform: translateY(60px);
     }
     .form-container h2 {
         font-size: 1.8rem !important;
@@ -331,6 +331,7 @@ button:hover {
         width: 40%;
         height: 100%;
         max-height: 56vh;
+        transform: translateY(50px);
     }
 }
 
@@ -774,82 +775,178 @@ input[type="file"] {
 }
 
 
-/* Login Form */
-.login-form {
-    background-color: #f9f9f9;
-    margin: auto;
-    margin-top: 12%;
-    width: 21%;
-    height: 100%;
-    max-height: 50vh;
-    padding: 6vh;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
-}
-.form-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4%;
-}
-.form-header img {
-    height: 5rem;
-    width: auto;
-    margin-bottom: 3%;
-}
-.form-header h2 {
-    text-align: center;
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 4%;
-    font-size: 2rem !important;
-}
-.login-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5vh;
-}
-input[type="text"] {
-    padding: 8px;
-    width: 95%;
-    max-width: 41vh;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.create-acc {
-    display: flex;
-    gap: 1vh;
-    align-content: center;
-    align-items: center;
-}
-.login-btn {
-    display: flex;
-    gap: 18vh;
-    align-self: center;
-    margin-bottom: 3%;
-}
-.login-btn button {
-    background-color: #208C20;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 7px 0px;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: center;
-    margin-top: 0%;
-    font-size: 1rem;
-    width: 10vh;
-}
-.login-btn button:hover {
-    background-color: #1a6b1a;
-    transition: background-color 0.3s ease;
-}
+
 
 /* Phone Number Copyable */
 li.copyable {
     cursor: pointer;
     user-select: none;
+}
+
+
+/* LOGIN FORM BASE STYLES */
+.login-form {
+  background-color: #f9f9f9;
+  margin: auto;
+  margin-top: 10%;
+  width: 31%;
+  height: 100%;
+  max-height: 50vh;
+  padding: 6vh;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  overflow: auto;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4%;
+}
+.form-header img {
+  height: 5rem;
+  width: auto;
+  margin-bottom: 3%;
+}
+.form-header h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 4%;
+  font-size: 2rem !important;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  padding: 8px;
+  width: 100%;
+  max-width: 78vh;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.create-acc {
+  display: flex;
+  gap: 1vh;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.login-btn {
+  display: flex;
+  gap: 20vh;
+  align-self: center;
+  margin-bottom: 3%;
+}
+.login-btn button {
+  background-color: #208C20;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 15vh;
+}
+.login-btn button:hover {
+  background-color: #1a6b1a;
+  transition: background-color 0.3s ease;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 480px) {
+  .login-form {
+    width: 65%;
+    max-height: 58vh;
+    padding: 4vh;
+    transform: translateY(90px);
+  }
+  .login-btn {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .login-btn button {
+    width: 90%;
+    font-size: 0.88rem;
+  }
+  .form-header h2 {
+    font-size: 1.2rem !important;
+  }
+  label {
+    font-size: 0.88rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .login-form {
+    width: 65%;
+    max-height: 58vh;
+    padding: 4vh;
+    transform: translateY(90px);
+  }
+  .login-btn {
+    flex-direction: row;
+    gap: 8vh;
+  }
+  .login-btn button {
+    width: 95%;
+    font-size: 0.9rem;
+  }
+  label {
+    font-size: 0.9rem;
+  }
+  .form-header h2 {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .login-form {
+    width: 50%;
+    max-height: 60vh;
+    padding: 8vh;
+    transform: translateY(75px);
+  }
+  .login-btn {
+    gap: 12vh;
+  }
+  .login-btn button {
+    width: 11vh;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .login-form {
+    width: 55%;
+    max-height: 58vh;
+    transform: translateY(60px);
+  }
+  .form-header h2 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1418px) {
+  .login-form {
+    width: 40%;
+    max-height: 56vh;
+    transform: translateY(50px);
+  }
+}
+
+@media (min-width: 1419px) {
+  .login-form {
+    width: 31%;
+    max-height: 56vh;
+  }
 }
