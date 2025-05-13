@@ -231,6 +231,7 @@ body {
     height: 100%;
     max-height: 83vh;
     text-align: center;
+    overflow: auto;
   }
 
   .footer-content {
@@ -302,6 +303,7 @@ body {
     height: 100%;
     max-height: 75vh;
     text-align: center;
+    overflow: auto;
   }
 
   .footer-content {
@@ -541,17 +543,6 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-
-
-/* @media (min-width: 1620px) {
-    #footer {
-        padding: 2rem 10rem;
-        min-height: 36vh;
-      }
-    } */
-
-
 
 
 
@@ -1380,6 +1371,7 @@ body::-webkit-scrollbar-track {
 
 }
 
+
 @media only screen and (min-width: 1633px) and (max-width: 1751px) {
   .user-dropdown {
     right: 22rem;
@@ -1409,6 +1401,7 @@ body::-webkit-scrollbar-track {
   }
 
 }
+
 
 @media only screen and (min-width: 1506px) and (max-width: 1558px) {
   .user-dropdown {
@@ -1453,58 +1446,5 @@ body::-webkit-scrollbar-track {
   #campusMap {
     width: 1290px;
   }
-
-}
-
-@media only screen and (min-width: 1140px) and (max-width: 1400px) {
-  .user-dropdown {
-    right: 14rem;
-    top: 2rem;
-  }
-
-  .tool-dropdown {
-    right: 14rem;
-    top: 10rem;
-  }
-
-  .toggle {
-    left: 12rem;
-  }
-
-  .side-panel {
-    width: 16%;
-  }
-
-  #campusMap {
-    width: 1290px;
-  }
-
-
-}
-
-
-@media only screen and (min-width: 100px) and (max-width: 1140px) {
-  .user-dropdown {
-    right: 14rem;
-    top: 2rem;
-  }
-
-  .tool-dropdown {
-    right: 14rem;
-    top: 10rem;
-  }
-
-  .toggle {
-    left: 12rem;
-  }
-
-  .side-panel {
-    width: 16%;
-  }
-
-  #campusMap {
-    width: 1290px;
-  }
-
 
 }

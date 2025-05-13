@@ -58,7 +58,7 @@ body {
 =========================== */
 
 /* Small devices (phones) */
-@media (max-width: 349px) {
+@media (max-width: 399px) {
   .header {
     padding: 0.2rem;
     max-width: 25vh;
@@ -84,7 +84,7 @@ body {
   }
 }
 
-@media (min-width: 350px) and (max-width: 770px) {
+@media (min-width: 400px) and (max-width: 770px) {
   .header {
     padding: 0.3rem;
     max-width: 33vh;
@@ -94,7 +94,7 @@ body {
   }
 
   .header-text h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .header .unimap {
