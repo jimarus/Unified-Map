@@ -62,9 +62,8 @@ body {
   .header {
     padding: 0.2rem;
     max-width: 25vh;
-    top: 10%;
+    top: 4%;
     right: 50%;
-    left: 50%;
   }
 
   .header-text h1 {
@@ -90,7 +89,6 @@ body {
     max-width: 33vh;
     top: 4%;
     right: 50%;
-    left: 50%;
   }
 
   .header-text h1 {
@@ -112,8 +110,7 @@ body {
     padding: 0.6rem;
     max-width: 40vh;
     top: 4%;
-    right: 60%;
-    left: 40%;
+    right: 50%;
   }
 
   .header-text h1 {
@@ -134,8 +131,7 @@ body {
   .header {
     max-width: 60vh;
     top: 2%;
-    right: 55%;
-    left: 45%;
+    right: 50%;
   }
 
   .header-text h1 {
@@ -422,10 +418,10 @@ button:hover {
     .profile-container {
         width: 50%;
         height: 100%;
-        max-height: 70vh;
+        max-height: 60vh;
         padding: 5vh;
         overflow: auto;
-        margin-top: 20%;
+        transform: translateY(100px);
     }
     .profile-container h2 {
         font-size: 1.8rem;
@@ -459,7 +455,7 @@ button:hover {
         max-height: 70vh;
         padding: 5vh;
         overflow: auto;
-        margin-top: 20%;
+        transform: translateY(100px);
     }
     .profile-container h2 {
         font-size: 1.7rem;
@@ -493,7 +489,7 @@ button:hover {
         max-height: 60vh;
         padding: 5vh;
         overflow: auto;
-        margin-top: 10%;
+        transform: translateY(100px);
     }
     .profile-container h2 {
         font-size: 1.7rem;
@@ -526,7 +522,8 @@ button:hover {
         height: 100%;
         max-height: 55vh;
         padding: 5vh;
-        overflow: auto;
+        overflow: auto;        
+        transform: translateY(50px);
     }
     .prof img {
         height: 12vh;
@@ -545,7 +542,8 @@ button:hover {
         width: 35%;
         height: 100%;
         max-height: 60vh;
-        padding: 5vh;
+        padding: 5vh;        
+        transform: translateY(50px);
         overflow: auto;
     }
 }

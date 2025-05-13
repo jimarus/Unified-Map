@@ -16,6 +16,155 @@ body {
   max-width: 100vw;
 }
 
+/* header styles */
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #208C20;
+  color: white;
+  border-radius: 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1vh 1vw;
+  margin: 1.8% auto 1%;
+  width: 100%;
+  max-width: 64vh;
+  text-align: center;
+}
+
+/* Header Text Block */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+/* Title Styling */
+.header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* UNIMAP Word */
+.header .unimap {
+  display: flex;
+  gap: 4vh;
+  font-weight: bold;
+}
+
+/* Logo Image */
+.header img {
+  height: 6.5vh;
+  margin-right: 1vh;
+}
+
+/* ===========================
+   RESPONSIVE MEDIA QUERIES
+=========================== */
+
+/* Small devices (phones) */
+@media (max-width: 399px) {
+  .header {
+    padding: 0.2rem;
+    max-width: 25vh;
+    top: 10%;
+    right: 50%;
+    left: 50%;
+  }
+
+  .header-text h1 {
+    font-size: 0.8rem;
+  }
+
+  .header .unimap {
+    gap: 1.5vh;
+  }
+
+  .header img {
+    height: 5vh;
+  }
+
+  .header-text {
+    width: auto;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 770px) {
+  .header {
+    padding: 0.3rem;
+    max-width: 33vh;
+    top: 4%;
+    right: 50%;
+    left: 50%;
+  }
+
+  .header-text h1 {
+    font-size: 1rem;
+  }
+
+  .header .unimap {
+    gap: 2vh;
+  }
+
+  .header img {
+    height: 6vh;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .header {
+    padding: 0.6rem;
+    max-width: 40vh;
+    top: 4%;
+    right: 60%;
+    left: 40%;
+  }
+
+  .header-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .header .unimap {
+    gap: 2vh;
+  }
+
+  .header img {
+    height: 6vh;
+  }
+}
+
+/* Large devices (laptops and desktops) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header {
+    max-width: 60vh;
+    top: 2%;
+    right: 55%;
+    left: 45%;
+  }
+
+  .header-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .header .unimap {
+    gap: 3.5vh;
+  }
+
+  .header img {
+    height: 6.5vh;
+  }
+}
+
+
 .side-panel {
   position: absolute;
   top: 0;
