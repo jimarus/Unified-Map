@@ -66,6 +66,9 @@ body {
         height: 10%;
         overflow: hidden;
         top: 10%;
+        
+        left: 50%;
+        right: 50%;
     }
     .header-text h1 {
         font-size: 0.8rem;
@@ -91,8 +94,9 @@ body {
         width: 69%;
         max-width: 30vh;
         height: 9%;
-        overflow: hidden;
-        left: 73%;
+        overflow: hidden;        
+        left: 50%;
+        right: 50%;
         top: 2%;
     }
     .header-text h1 {
@@ -120,6 +124,8 @@ body {
         max-width: 40vh;
         height: 10%;
         overflow: hidden;
+        left: 40%;
+        right: 60%;
     }
     .header-text h1 {
         font-size: 1.2rem;
