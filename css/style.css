@@ -393,6 +393,7 @@ body {
   .footer-branding .logos {
     justify-content: center;
     display: flex;
+    gap: 14px;
   }
 
   .org-info,
@@ -406,8 +407,8 @@ body {
   }
 
   .bagong-pilipinas {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 3.7rem;
+    width: 3.7rem;
     top: 1.2rem;
     left: 0.5rem;
   }

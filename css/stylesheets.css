@@ -863,7 +863,7 @@ li.copyable {
 @media (max-width: 480px) {
   .login-form {
     width: 65%;
-    max-height: 58vh;
+    max-height: 66vh;
     padding: 4vh;
     transform: translateY(90px);
   }
