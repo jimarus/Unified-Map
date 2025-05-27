@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #208C20;
+  background-color: #085C76;
   color: white;
   border-radius: 32px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -192,7 +192,7 @@ form {
     margin-bottom: 3%;
 }
 button {
-    background-color: #208C20;
+    background-color: #7BAB48;
     color: white;
     border: none;
     border-radius: 20px;
@@ -205,7 +205,7 @@ button {
     width: 15vh;
 }
 button:hover {
-    background-color: #1a6b1a;
+    background-color: #678f3c;
     transition: background-color 0.3s ease;
 }
 
@@ -379,7 +379,7 @@ button:hover {
     margin: 0;
 }
 .profile-btn button {
-    background-color: #208C20;
+    background-color: #7BAB48;
     color: white;
     border: none;
     border-radius: 20px;
@@ -392,11 +392,11 @@ button:hover {
     width: 12vh;
 }
 .profile-btn button:hover {
-    background-color: #1a6b1a;
+    background-color: #678f3c;
 }
 #change-pass {
     /* transform: translateX(233px); */
-    background-color: #208C20;
+    background-color: #7BAB48;
     color: white;
     border: none;
     border-radius: 20px;
@@ -410,7 +410,7 @@ button:hover {
     width: 22vh;
 }
 #change-pass:hover {
-    background-color: #1a6b1a;
+    background-color: #678f3c;
 }
 
 /* RESPONSIVE STYLE OF ACCOUNT SETTINGS */
@@ -844,7 +844,7 @@ li.copyable {
   margin-bottom: 3%;
 }
 .login-btn button {
-  background-color: #208C20;
+  background-color: #7BAB48;
   color: white;
   border: none;
   border-radius: 20px;
@@ -855,7 +855,7 @@ li.copyable {
   width: 13vh;
 }
 .login-btn button:hover {
-  background-color: #1a6b1a;
+  background-color: #678f3c;
   transition: background-color 0.3s ease;
 }
 
