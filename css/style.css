@@ -1131,7 +1131,6 @@ ul .submenu {
 
 .menu-scroll {
   max-height: calc(100vh - 50px);
-  /* leave space for the search bar */
   overflow-y: auto;
   padding-right: 8px;
 }
