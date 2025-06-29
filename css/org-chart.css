@@ -1,8 +1,8 @@
 /* Body Background */
 body {
-    background-color: #f0f0f0;  /* Light gray with a slight warmth */
+    background-color: #ebebeb;  /* Light gray with a slight warmth */
     height: auto;
-    overflow-y: hidden;
+    overflow: auto;
 }
 
 .cherm-bg {
