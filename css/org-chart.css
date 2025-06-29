@@ -1,6 +1,6 @@
 /* Body Background */
 body {
-    background-color: #ebebeb;  /* Light gray with a slight warmth */
+    background-color: #ebebeb; /* Light gray with a slight warmth */
     height: auto;
     overflow: auto;
 }
@@ -14,33 +14,31 @@ body {
 
 .cherm-bg h1 {
     color: #333;
-    font-size: 3.50rem;
+    font-size: 3.5rem;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0;
 }
 
-/* Medium screens */
+/* Responsive Design */
 @media (max-width: 1400px) {
     .cherm-bg {
         margin-top: 10%;
     }
     .cherm-bg h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
 }
 
-/* Medium screens */
 @media (max-width: 1100px) {
     .cherm-bg {
         margin-top: 10%;
     }
     .cherm-bg h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
-/* Small screens */
 @media (max-width: 600px) {
     .cherm-bg {
         margin-top: 13%;
@@ -66,8 +64,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
-    position: absolute;
+    gap: 1rem;
+    position: relative;
     padding-bottom: 7rem;
     top: -3%;
 }
@@ -76,8 +74,8 @@ body {
 .org-level {
     display: flex;
     justify-content: center;
-    gap: 100px;
-    margin-bottom: 32px;
+    gap: 5%;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -85,30 +83,30 @@ body {
 /* Card Styling */
 .org-level .card {
     border-style: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    min-width: 340px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    width: 90%;
     max-width: 380px;
-    padding: 36px 20px;
+    padding: 2rem;
     font-size: 1.15rem;
     transition: transform 0.2s;
 }
 
 .org-level .card:hover {
     transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(13,110,253,0.15);
+    box-shadow: 0 6px 24px rgba(13, 110, 253, 0.15);
 }
 
 /* Image Styling */
 .org-level .card img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     object-fit: cover;
-    border: 4px solid #085C76;;
+    border: 4px solid #085C76;
     background: #fff;
-    margin-bottom: 12px;
-    width: 280px;
-    height: 280px;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
     box-shadow: 0px 1px 16px 2px #808080d6;
 }
 
@@ -116,128 +114,49 @@ body {
 .org-level .card h5 {
     font-weight: 700;
     color: #333;
-    margin-bottom: 4px;
+    margin-bottom: 0.5rem;
 }
 .org-level .card small {
     color: #555;
     font-size: 0.95em;
 }
 
-/* Responsive Design */
-@media (max-width: 1399px) {
-    .org-level {
-        gap: 40px;
-        justify-content: space-around;
-    }
-    .org-level .card {
-        min-width: 320px;
-        max-width: 360px;
-        padding: 32px 18px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .org-level {
-        gap: 30px;
-        justify-content: space-around;
-    }
-    .org-level .card {
-        min-width: 300px;
-        max-width: 340px;
-        padding: 30px 16px;
-    }
-}
-
+/* Responsive Adjustments */
 @media (max-width: 992px) {
     .org-level {
-        gap: 25px;
-        justify-content: space-around;
+        gap: 3%;
     }
     .org-level .card {
-        min-width: 280px;
-        max-width: 320px;
-        padding: 28px 15px;
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    .org-level .card img {
+        max-width: 220px;
     }
 }
 
 @media (max-width: 768px) {
-    .org-level {
-        gap: 20px;
-        justify-content: space-around;
-    }
-    .org-level .card {
-        min-width: 260px;
-        max-width: 300px;
-        padding: 25px 14px;
-    }
-}
-
-@media (max-width: 600px) {
     .org-level {
         flex-direction: column;
         align-items: center;
-        gap: 25px;
-        justify-content: center;
+        gap: 2rem;
     }
     .org-level .card {
-        width: 85%;
-        min-width: unset;
-        max-width: unset;
-        padding: 24px 12px;
+        width: 90%;
+        padding: 1.2rem;
     }
-}
-
-/* Special handling for SLSU and DOST sections */
-.org-level:first-of-type {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-@media (max-width: 1199px) and (min-width: 601px) {
-    .org-level:first-of-type {
-        justify-content: space-around;
-        padding: 0 20px;
-    }
-    
-    .org-level:first-of-type .d-flex {
-        width: 100%;
-        justify-content: space-around;
-    }
-}
-
-@media (max-width: 1399px) {
     .org-level .card img {
-        width: 260px;
-        height: 260px;
+        max-width: 200px;
     }
 }
 
-@media (max-width: 1200px) {
-    .org-level .card img {
-        width: 240px;
-        height: 240px;
+@media (max-width: 576px) {
+    .org-level .card {
+        padding: 1rem;
+        font-size: 0.9rem;
     }
-}
-
-@media (max-width: 992px) {
     .org-level .card img {
-        width: 220px;
-        height: 220px;
-    }
-}
-
-@media (max-width: 768px) {
-    .org-level .card img {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media (max-width: 600px) {
-    .org-level .card img {
-        width: 180px;
-        height: 180px;
+        max-width: 180px;
     }
 }
 
@@ -259,54 +178,10 @@ body {
     box-shadow: 0px 5px 8px -2px #808080d6;
 }
 
-/* CHERM Team Heading Specific Styles */
-.org-level:nth-of-type(3) .section-heading {
-    font-size: 2rem;
-    padding: 0.7rem 2.5rem;
-    max-width: 95%;
-}
-
-.section-heading::before,
-.section-heading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 25px;
-    height: 2px;
-    background-color: #7BAB48;
-}
-
-.section-heading::before {
-    left: -35px;
-}
-
-.section-heading::after {
-    right: -35px;
-}
-
 @media (max-width: 768px) {
     .section-heading {
         font-size: 1.4rem;
         padding: 0.4rem 1.2rem;
-        margin-bottom: 1.8rem;
-    }
-    
-    .org-level:nth-of-type(3) .section-heading {
-        font-size: 1.8rem;
-        padding: 0.6rem 2rem;
-    }
-    
-    .section-heading::before,
-    .section-heading::after {
-        width: 20px;
-    }
-    
-    .section-heading::before {
-        left: -30px;
-    }
-    
-    .section-heading::after {
-        right: -30px;
     }
 }
 
@@ -314,62 +189,39 @@ body {
     .section-heading {
         font-size: 1.2rem;
         padding: 0.3rem 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .org-level:nth-of-type(3) .section-heading {
-        font-size: 1.6rem;
-        padding: 0.5rem 1.8rem;
-    }
-    
-    .section-heading::before,
-    .section-heading::after {
-        width: 15px;
-    }
-    
-    .section-heading::before {
-        left: -25px;
-    }
-    
-    .section-heading::after {
-        right: -25px;
     }
 }
-  
 
 /* Back Button Styling */
 .back-btn {
     position: fixed;
-    top: 26px;
-    left: 26px;
+    top: 1rem;
+    left: 1rem;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
     background: #7BAB48;
     color: #fff;
     border-radius: 24px;
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: background 0.2s;
     z-index: 100;
 }
-.back-btn i {
-    font-size: 1.1em;
-}
+
 .back-btn:hover {
     background: #678f3c;
-    color: #fff;
-    text-decoration: none;
 }
+
 @media (max-width: 600px) {
     .back-btn {
-        top: 12px;
-        left: 12px;
-        padding: 6px 12px;
-        font-size: 0.95rem;
+        top: 0.5rem;
+        left: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
