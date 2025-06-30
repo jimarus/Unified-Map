@@ -1,6 +1,3 @@
-function goToMainPage(){
-    window.location.href = "../index.html";
-}
         // Function to switch between pages
         function showPage(pageId) {
             // Hide all pages
