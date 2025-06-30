@@ -6,7 +6,7 @@ body {
 
 .sidebar {
     transition: all 0.3s ease;
-    background-color: #085C76;
+    background-color: #085C76 !important;
 }
 
 .sidebar-item {
