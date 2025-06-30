@@ -1,5 +1,5 @@
 function goToMainPage(){
-    window.location.href = "/unified-map/index.html";
+    window.location.href = "../index.html";
 }
         // Function to switch between pages
         function showPage(pageId) {
